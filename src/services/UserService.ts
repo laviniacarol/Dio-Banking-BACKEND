@@ -35,4 +35,15 @@ constructor(
     getAllUser = () => {
         return this.db
     }
+
+    deleteUser = (email: string) => {
+    const index = this.db.findIndex(user => user.email === email);
+
+    if (index === -1) {
+        throw new Error('User not found');
+    }
+
+    this.db.splice(index, 1);
+}
+    
 }
