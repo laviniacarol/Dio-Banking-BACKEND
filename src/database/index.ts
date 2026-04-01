@@ -1,15 +1,21 @@
+import "reflect-metadata";
 import { DataSource } from "typeorm";
+import path from "path";
+import { User } from "../entities/User";
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
-    database: "./src/database/db.sqlite",
+
+    // caminho absoluto evita bugs
+    database: path.resolve(__dirname, "db.sqlite"),
+
+    entities: [User],
+
     migrations: [
-        "./src/database/migrations/*.ts"
+        path.resolve(__dirname, "./migrations/*.{ts,js}")
     ],
-    entities: [
-        "./src/entities/*.ts"
-    ],
-    synchronize: true
+
+    synchronize: true,
 });
 
 export const initDB = async () => {
@@ -18,5 +24,4 @@ export const initDB = async () => {
         console.log("Data Source inicializado");
     } catch (error) {
         console.error(error);
-    }
-};
+    }}

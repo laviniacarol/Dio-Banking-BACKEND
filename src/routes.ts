@@ -7,7 +7,7 @@ export const router = Router()
 const userController = new UserController()
 
 router.post('/user', userController.createUser)
-router.get('/user', userController.getAllUser)
+router.get('/user', userController.getUsers)
 router.delete('/user', (request: Request, response: Response) => {
 
 const user = request.body

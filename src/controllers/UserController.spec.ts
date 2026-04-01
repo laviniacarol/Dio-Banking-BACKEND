@@ -68,7 +68,7 @@ describe('UserController', () => {
 
         expect(mockResponse.state.status).toBe(400);
         expect(mockResponse.state.json).toMatchObject({
-            message: 'Bad Request: User.Name obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
         });
 
         expect(mockUserService.createUser).not.toHaveBeenCalled();
@@ -89,7 +89,7 @@ describe('UserController', () => {
 
         expect(mockResponse.state.status).toBe(400);
         expect(mockResponse.state.json).toMatchObject({
-            message: 'Bad Request: User.Email obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
         });
 
         expect(mockUserService.createUser).not.toHaveBeenCalled();
@@ -110,7 +110,7 @@ describe('UserController', () => {
 
         expect(mockResponse.state.status).toBe(400);
         expect(mockResponse.state.json).toMatchObject({
-            message: 'Bad Request: User.Password obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
         });
 
         expect(mockUserService.createUser).not.toHaveBeenCalled();

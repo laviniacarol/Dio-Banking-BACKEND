@@ -13,19 +13,19 @@ export class UserController {
 
         if (!name) {
             return response.status(400).json({
-                message: 'Bad Request: User.Name obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
             });
         }
 
         if (!email) {
             return response.status(400).json({
-                message: 'Bad Request: User.Email obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
             });
         }
 
         if (!password) {
             return response.status(400).json({
-                message: 'Bad Request: User.Password obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
             });
         }
 
@@ -55,7 +55,7 @@ export class UserController {
 
         if (!email) {
             return response.status(400).json({
-                message: 'Bad Request: Email obrigatório'
+            message: 'Bad Request: Todos os campos são obrigatórios'
             });
         }
 
